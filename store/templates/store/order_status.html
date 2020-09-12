@@ -1,0 +1,71 @@
+{% extends 'store/main1.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="order-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Order Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{pending}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+     <div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title"> Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_order}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+     <div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Delivered</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{delivered}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-lg">
+		<div class="card card-body">
+
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.as_p}}
+
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form>
+		</div>
+
+	</div>
+	<div class="col-lg">
+		<div class="card card-body">
+
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.as_p}}
+
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form>
+		</div>
+</div>
+
+
+
+{% endblock content %}
